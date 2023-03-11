@@ -1,0 +1,31 @@
+.nav-list{
+  list-style: none;
+   height: auto;
+   margin-top: 13px;
+}
+.nav-link{
+  text-decoration: none;
+  display: inline-block;
+  padding: 7px 30px;
+  color: grey;
+}
+.nav-link:hover{
+  background-color:rgb(232, 225, 225);
+  color: white;
+}
+.navbar{
+
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  padding: 0px  100px 0 100px;
+  
+ 
+
+}
+.navbar-img{
+
+  width: 200px;
+margin-bottom: 5px;
+  
+}

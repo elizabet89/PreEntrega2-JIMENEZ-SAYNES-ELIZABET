@@ -5,6 +5,7 @@ function CardWidget(){
 
      <div className='contenedor-icon'>
       <i  className="bi bi-cart4 icon-carrito"></i>
+      <span>1</span>
      </div>
 
 

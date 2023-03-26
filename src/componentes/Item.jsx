@@ -8,7 +8,7 @@ const Item=(props)=>{
     <article id={props.id} className='article'>
       <div className='card'>
         <figure className='card__figure'>
-          <img src={props.img} className='card__img' alt={props.titulo} />
+          <img src={props.url} className='card__img' alt={props.titulo} />
         </figure>
         <div className='card__contenido'>
           <p className='card__titulo'>{props.titulo}</p>

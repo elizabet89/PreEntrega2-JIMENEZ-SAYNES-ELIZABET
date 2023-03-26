@@ -25,6 +25,28 @@ const promesa= new Promise((resolve,reject)=>{
 
 
 const ItemDetailsContainer=()=>{
+
+  const [cant, setCant] =useState(0);
+
+  const decrementa=()=>{
+   
+    if(cant === 0){
+        return
+    }else{
+
+      setCant(cant-1)
+    }
+    
+    
+  }
+
+  const incrementa=()=>{
+    setCant(cant +1)
+  }
+
+
+  //==========================
+
       const [product, setproduct] =useState([])
       let { id } = useParams();
 
@@ -43,13 +65,18 @@ const ItemDetailsContainer=()=>{
      <article id={product.id} className='article'>
       <div className='card'>
         <figure className='card__figure'>
-          <img src={product.img} className='card__img' alt={product.titulo} />
+          <img src={product.url} className='card__img' alt={product.titulo} />
         </figure>
         <div className='card__contenido'>
           <p className='card__titulo'>{product.titulo}</p>
           <p className='card__descripcion'>{product.descripcion}</p>
           <span className='card__precio'>{`$`+ product.precio}</span>
           
+        </div>
+        <div className="card__contenedor-btn">
+        <button className="card__btn" onClick={decrementa}>-</button>
+        <span className="card__span">{cant}</span>
+        <button className="card__btn" onClick={incrementa}>+</button>
         </div>
       </div>
     </article>

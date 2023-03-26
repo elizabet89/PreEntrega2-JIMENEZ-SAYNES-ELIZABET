@@ -1,7 +1,18 @@
+
+import Imagen1 from '../imagenes/teclado.jpg'
+import Imagen2 from '../imagenes/LAPIZ.jpg'
+import Imagen3 from '../imagenes/playera.jpg'
+import Imagen4 from '../imagenes/tennis-04.jpg'
+import Imagen5 from '../imagenes/esmalte.jpg'
+import Imagen6 from '../imagenes/short.jpg'
+import Imagen7 from '../imagenes/tenis2.jpg'
+import Imagen8 from '../imagenes/mouse.jpg'
+
+
 const productos= [
   {
   id:1,  
-  img:'../../public/imagenes/teclado.jpg',
+  url:Imagen1,
   titulo:'Tapete para teclado',
   descripcion:'Tapete extendido con base de goma antideslizante',
   precio:300,
@@ -9,7 +20,7 @@ const productos= [
   },
   {
     id:2,
-    img:'../../public/imagenes/LAPIZ.jpg',
+    url:Imagen2,
     titulo:'Lapiz delidedor',
     descripcion:'Delineador de ojos base liquida, con 24hr de duracion contra agua',
     precio:500,
@@ -17,7 +28,7 @@ const productos= [
   },
   {
     id:3,
-    img:'../../public/imagenes/playera.jpg',
+    url:Imagen3,
     titulo:'Playera Polo',
     descripcion:'Playera tipo polo de algodon,con  estampado elegante en el cuello',
     precio:300,
@@ -25,7 +36,7 @@ const productos= [
   },
   {
     id:4,
-    img:'../../public/imagenes/tennis-04.jpg',
+    url:Imagen4,
     titulo:'Tenis adidas',
     descripcion:'Tenis deportivos tipo lana con diseño exclusivo',
     precio:300,
@@ -33,7 +44,7 @@ const productos= [
   },
   {
     id:5,
-    img:'../../public/imagenes/esmalte.jpg',
+    url:Imagen5,
     titulo:'Esmalte para uñas',
     descripcion:'Pintura de uñas color azul efecto mate',
     precio:300,
@@ -41,7 +52,7 @@ const productos= [
   },
   {
     id:6,
-    img:'../../public/imagenes/short.jpg',
+    url:Imagen6,
     titulo:'Short de mezclilla',
     descripcion:'Short de tela de algodon liso ,estilo casual',
     precio:350,
@@ -49,7 +60,7 @@ const productos= [
   },
   {
     id:7,
-    img:'../../public/imagenes/tenis2.jpg',
+    url:Imagen7,
     titulo:'Tenis nike',
     descripcion:'Tenis deportivos,para los expertos en deportes ',
     precio:600,
@@ -57,7 +68,7 @@ const productos= [
   },
   { 
   id:8,  
-  img:'../../public/imagenes/mouse.jpg',
+  url:Imagen8,
   titulo:'Mouse ',
   descripcion:'Mouse inalambrico de tipo hergonomico',
   precio:100,

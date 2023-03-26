@@ -16,7 +16,7 @@ const ItemList=(props)=>{
 
             key={product.id}
             id={product.id}
-            img={product.img}
+            url={product.url}
             titulo={product.titulo}
             descripcion={product.descripcion}
             precio={product.precio}

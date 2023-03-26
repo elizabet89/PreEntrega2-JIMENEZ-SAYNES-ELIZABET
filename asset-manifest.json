@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/elizabet89/PreEntrega2-JIMENEZ-SAYNES-ELIZABET.git/static/css/main.fbaa4b71.css",
+    "main.js": "/elizabet89/PreEntrega2-JIMENEZ-SAYNES-ELIZABET.git/static/js/main.c9098ebe.js",
+    "static/media/tenis2.jpg": "/elizabet89/PreEntrega2-JIMENEZ-SAYNES-ELIZABET.git/static/media/tenis2.32946481a0b42a1df270.jpg",
+    "static/media/tennis-04.jpg": "/elizabet89/PreEntrega2-JIMENEZ-SAYNES-ELIZABET.git/static/media/tennis-04.36105e18ad0609d5603d.jpg",
+    "static/media/mouse.jpg": "/elizabet89/PreEntrega2-JIMENEZ-SAYNES-ELIZABET.git/static/media/mouse.067274e73e957becc466.jpg",
+    "static/media/LAPIZ.jpg": "/elizabet89/PreEntrega2-JIMENEZ-SAYNES-ELIZABET.git/static/media/LAPIZ.e9839ec2fa0ce4dc5422.jpg",
+    "static/media/playera.jpg": "/elizabet89/PreEntrega2-JIMENEZ-SAYNES-ELIZABET.git/static/media/playera.b36d27273e58cec8c84a.jpg",
+    "static/media/esmalte.jpg": "/elizabet89/PreEntrega2-JIMENEZ-SAYNES-ELIZABET.git/static/media/esmalte.9bdaa5353f5ab53e99a7.jpg",
+    "static/media/short.jpg": "/elizabet89/PreEntrega2-JIMENEZ-SAYNES-ELIZABET.git/static/media/short.b976ff732d5b36f5c5e6.jpg",
+    "static/media/logotipo.png": "/elizabet89/PreEntrega2-JIMENEZ-SAYNES-ELIZABET.git/static/media/logotipo.adb1fd609bde90843521.png",
+    "index.html": "/elizabet89/PreEntrega2-JIMENEZ-SAYNES-ELIZABET.git/index.html",
+    "main.fbaa4b71.css.map": "/elizabet89/PreEntrega2-JIMENEZ-SAYNES-ELIZABET.git/static/css/main.fbaa4b71.css.map",
+    "main.c9098ebe.js.map": "/elizabet89/PreEntrega2-JIMENEZ-SAYNES-ELIZABET.git/static/js/main.c9098ebe.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fbaa4b71.css",
+    "static/js/main.c9098ebe.js"
+  ]
+}

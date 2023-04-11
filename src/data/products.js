@@ -1,4 +1,6 @@
 
+
+
 import Imagen1 from '../imagenes/teclado.jpg'
 import Imagen2 from '../imagenes/LAPIZ.jpg'
 import Imagen3 from '../imagenes/playera.jpg'

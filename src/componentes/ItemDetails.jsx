@@ -1,8 +1,10 @@
-import React from "react";
-import { useState,useEffect } from "react";
+import React, { useContext } from "react";
+import {useState,useEffect } from "react";
 import Datos from '../data/products'
 import { useParams } from "react-router-dom";
 import '../estilos/ItemDetails.css'
+import ItemCount from "./ItemCount";
+import { cartContext } from "../App";
 
 
 // ===== mock async services=========
@@ -26,29 +28,10 @@ const promesa= new Promise((resolve,reject)=>{
 
 const ItemDetailsContainer=()=>{
 
-  const [cant, setCant] =useState(0);
-
-  const decrementa=()=>{
-   
-    if(cant === 0){
-        return
-    }else{
-
-      setCant(cant-1)
-    }
-    
-    
-  }
-
-  const incrementa=()=>{
-    setCant(cant +1)
-  }
-
-
-  //==========================
-
       const [product, setproduct] =useState([])
-      let { id } = useParams();
+     
+      let { id } = useParams();// Obtengo el paramtro de la url(es decir obtengo la url=la ruta con el use params)
+      // const {cart,setCart}=useContext(cartContext)
 
       useEffect(()=>{
   
@@ -57,9 +40,12 @@ const ItemDetailsContainer=()=>{
             setproduct(response)
        })
 
- }, [])
-//========================================
+       }, [])
 
+//========================================
+function onAddToCart(count){
+    // setCart(product)
+}
   return(
     <div className="contenedor-item">
      <article id={product.id} className='article'>
@@ -73,11 +59,8 @@ const ItemDetailsContainer=()=>{
           <span className='card__precio'>{`$`+ product.precio}</span>
           
         </div>
-        <div className="card__contenedor-btn">
-        <button className="card__btn" onClick={decrementa}>-</button>
-        <span className="card__span">{cant}</span>
-        <button className="card__btn" onClick={incrementa}>+</button>
-        </div>
+        <ItemCount onAddToCart={onAddToCart} />
+       
       </div>
     </article>
   

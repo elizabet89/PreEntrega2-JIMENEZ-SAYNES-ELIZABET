@@ -1,10 +1,12 @@
-import React from "react";
+// import React, { useContext } from "react";
 import logo from "../logo/logotipo.png";
 import "../estilos/Navbar.css";
 import CardWidget from "./CardWidget";
 import { Link } from "react-router-dom";
+// import { cartContext } from "../App";
 
 function Navbar() {
+  // console.log(useContext(cartContext))
   return (
     <header className="contenedor-principal-header">
       <nav className="navbar">

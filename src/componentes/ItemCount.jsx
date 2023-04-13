@@ -28,9 +28,10 @@ const ItemCount = ({onAddToCart}) => {
       <button className="card__btn" onClick={incrementa}>
         +
       </button>
-      <button onClick={onAddToCart}>agregar al carrito</button>
+      <button onClick={()=>onAddToCart(cant)}>agregar al carrito</button>
     </div>
   );
+  
 
 };
 export default ItemCount;

@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import  { useContext } from "react";
 import {useState,useEffect } from "react";
 import Datos from '../data/products'
 import { useParams } from "react-router-dom";
 import '../estilos/ItemDetails.css'
 import ItemCount from "./ItemCount";
-import { cartContext } from "../App";
+import { cartContext } from "../context/cartContext";
 
 
 // ===== mock async services=========
@@ -27,12 +27,13 @@ const promesa= new Promise((resolve,reject)=>{
 
 
 const ItemDetailsContainer=()=>{
-
+  // const [addedToCart, setAddedToCart] =useState(false)
       const [product, setproduct] =useState([])
      
       let { id } = useParams();// Obtengo el paramtro de la url(es decir obtengo la url=la ruta con el use params)
-      // const {cart,setCart}=useContext(cartContext)
-
+     
+      const {cart,addItem}=useContext(cartContext)
+     console.log("cart:",cart)
       useEffect(()=>{
   
             funcionDetalle(id).then((response)=>{
@@ -43,8 +44,10 @@ const ItemDetailsContainer=()=>{
        }, [])
 
 //========================================
-function onAddToCart(count){
-    // setCart(product)
+function onAddToCart(cant){
+    // setAddedToCart(true)
+    addItem(product, cant)
+    console.log("agregado al carrito")
 }
   return(
     <div className="contenedor-item">
@@ -59,8 +62,10 @@ function onAddToCart(count){
           <span className='card__precio'>{`$`+ product.precio}</span>
           
         </div>
-        <ItemCount onAddToCart={onAddToCart} />
+
+         <ItemCount onAddToCart={onAddToCart} />
        
+              
       </div>
     </article>
   

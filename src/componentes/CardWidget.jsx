@@ -1,11 +1,11 @@
 import React from 'react';
 import '../estilos/CardWidget.css'
-function CardWidget(){
+function CardWidget(props){
   return(
 
      <div className='contenedor-icon'>
       <i  className="bi bi-cart4 icon-carrito"></i>
-      <span>1</span>
+      <span>{props.cart}</span>
      </div>
 
 

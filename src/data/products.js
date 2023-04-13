@@ -18,7 +18,9 @@ const productos= [
   titulo:'Tapete para teclado',
   descripcion:'Tapete extendido con base de goma antideslizante',
   precio:300,
-  categoria:'electronica'
+  stock:20,
+  categoria:'electronica',
+  oferta:15
   },
   {
     id:2,
@@ -26,7 +28,9 @@ const productos= [
     titulo:'Lapiz delidedor',
     descripcion:'Delineador de ojos base liquida, con 24hr de duracion contra agua',
     precio:500,
-    categoria:'maquillaje'
+    stock:23,
+    categoria:'maquillaje',
+    oferta:25
   },
   {
     id:3,
@@ -34,6 +38,7 @@ const productos= [
     titulo:'Playera Polo',
     descripcion:'Playera tipo polo de algodon,con  estampado elegante en el cuello',
     precio:300,
+    stock:2,
     categoria:'ropa'
   },
   {
@@ -42,6 +47,7 @@ const productos= [
     titulo:'Tenis adidas',
     descripcion:'Tenis deportivos tipo lana con diseño exclusivo',
     precio:300,
+    stock:18,
     categoria:'calzado'
   },
   {
@@ -50,6 +56,7 @@ const productos= [
     titulo:'Esmalte para uñas',
     descripcion:'Pintura de uñas color azul efecto mate',
     precio:300,
+    stock:15,
     categoria:'maquillaje'
   },
   {
@@ -58,6 +65,7 @@ const productos= [
     titulo:'Short de mezclilla',
     descripcion:'Short de tela de algodon liso ,estilo casual',
     precio:350,
+    stock:14,
     categoria:'ropa'
   },
   {
@@ -66,6 +74,7 @@ const productos= [
     titulo:'Tenis nike',
     descripcion:'Tenis deportivos,para los expertos en deportes ',
     precio:600,
+    stock:11,
     categoria:'calzado'
   },
   { 
@@ -74,6 +83,7 @@ const productos= [
   titulo:'Mouse ',
   descripcion:'Mouse inalambrico de tipo hergonomico',
   precio:100,
+  stock:0,
   categoria:'electronica'
   }
 ];

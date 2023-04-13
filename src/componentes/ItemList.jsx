@@ -20,6 +20,8 @@ const ItemList=(props)=>{
             titulo={product.titulo}
             descripcion={product.descripcion}
             precio={product.precio}
+            oferta={product.oferta}
+            stock={product.stock}
           />
 
            )

@@ -3,13 +3,14 @@ import Datos from "../data/products";
 import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
+import Loader from "./Loader";
 
 // mocks async service
 //=========================================
 const promesa = new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve(Datos);
-  }, 1000);
+  }, 3000);
 });
 
 function funcionCategory(categoriaURL) {
@@ -24,7 +25,7 @@ function funcionCategory(categoriaURL) {
 
 //==============================
 function ItemListContainer(props) {
-  //==useState===
+  //==useState==================
 
   const [products, setProducts] = useState([]);
   const { categoriaid } = useParams();
@@ -40,6 +41,10 @@ function ItemListContainer(props) {
       });
     }
   });
+
+  if(products.length=== 0){
+    return  <Loader />
+  }
   //=====================================================0
 
   //==============================================

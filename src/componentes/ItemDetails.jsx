@@ -14,7 +14,6 @@ const funcionDetalle=(idURL)=>{
 
 const promesa= new Promise((resolve,reject)=>{
   setTimeout(()=>{
-
     const encontrado=Datos.find(item =>item.id === Number(idURL))
     resolve(encontrado)
   },500);

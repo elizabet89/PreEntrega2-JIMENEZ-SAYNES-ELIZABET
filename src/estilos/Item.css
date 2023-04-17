@@ -15,6 +15,10 @@
   width: 100%;
   height: 155px;
 }
+.cart__oferta{
+  display: flex;
+  justify-content: space-between;
+}
 .card__img{
   width: 100%;
   height: 100%;

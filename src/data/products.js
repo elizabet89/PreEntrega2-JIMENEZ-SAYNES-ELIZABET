@@ -83,7 +83,7 @@ const productos= [
   titulo:'Mouse ',
   descripcion:'Mouse inalambrico de tipo hergonomico',
   precio:100,
-  stock:0,
+  stock:10,
   categoria:'electronica'
   }
 ];

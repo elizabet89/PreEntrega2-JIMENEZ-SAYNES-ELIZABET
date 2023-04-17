@@ -11,11 +11,12 @@ const Item=(props)=>{
           <img src={props.url} className='card__img' alt={props.titulo} />
         </figure>
         <div className='card__contenido'>
-          {
+        <div className='cart__oferta'>
+        <p className='card__titulo'>{props.titulo}</p>
+           {
              props.oferta && ( <h4>{props.oferta+`%`}</h4>)//renderizado condicional
           }
-         
-          <p className='card__titulo'>{props.titulo}</p>
+        </div>
           <p className='card__descripcion'>{props.descripcion}</p>
           <span className='card__precio'>{`$`+ props.precio}</span>
         </div>

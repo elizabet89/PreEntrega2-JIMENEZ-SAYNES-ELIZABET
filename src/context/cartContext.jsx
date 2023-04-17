@@ -35,7 +35,7 @@ function CartProvider(props){
     })
     return conta
   }
-
+ 
   function getPriceInCart(){
     let total=0
     cart.forEach((item)=>{
@@ -45,6 +45,8 @@ function CartProvider(props){
     })
     return total
   }
+
+ 
   return(
 
     <Provider value={{ cart, addItem, getPriceInCart,getCountInCart}}>

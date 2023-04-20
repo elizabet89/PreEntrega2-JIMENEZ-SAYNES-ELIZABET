@@ -6,6 +6,7 @@
 
 import { initializeApp } from "firebase/app";
 import { getFirestore,collection,getDocs,doc,getDoc,query,where,addDoc } from "firebase/firestore";
+// import productos from '../data/products'
 
 const firebaseConfig = {
   apiKey: "AIzaSyD3pPLEVCpSXNQRqJYjRUQsUAxufX80u6c",
@@ -39,8 +40,6 @@ export async function getItems(){
    
 }
 
-
-
 export async function getSingleItem(idURL){
  
   const docRef = doc(db, "productos", idURL);
@@ -49,9 +48,8 @@ export async function getSingleItem(idURL){
   
 }  
 
-
 export async function funcionCategory(categoriaid){
-  // const q = query(collection(db, "cities"), where("capital", "==", true));
+ 
   const productosRef=collection(db,"productos")
   const q= query(productosRef, where("categoria", "==",categoriaid))
    
@@ -69,4 +67,14 @@ export async function createOrder(order){
    const collectionOrdersRef= collection(db,"orders")
    const response =await addDoc(collectionOrdersRef,order)
     return response.id
+  }
+
+  export async function exportData(){
+    //productos del array
+
+    // const collectionRef= collection(db,"productos")
+    // for(let item of productos){
+    //   const response =await addDoc(collectionRef, item)
+    //   console.log( "producto exportado con Id +"response.id )
+    // }
   }

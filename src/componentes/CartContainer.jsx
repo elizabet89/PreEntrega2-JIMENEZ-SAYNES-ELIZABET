@@ -1,19 +1,21 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { cartContext } from "../context/cartContext";
 import "../estilos/CartContainer.css";
 import { createOrder } from "../serives/dbfirebase";  
 import swal from "sweetalert";
-
 const CartContainer = () => {
   
   const context = useContext(cartContext);
   const cart = context.cart;
   const getPriceInCart = context.getPriceInCart;
+  const cartClear = context.cartClear; 
+  const deleteItem=context.deleteItem
+ 
   
   // renderizando condicional -- si el carrito esta vacio mostrar mensaje carrito vacio
 
   if (cart.length === 0) {
-    return <h5> carrito vacio</h5>;
+    return <h5 className="cart-vacio">Su Carrito esta Vacio...</h5>;
   }
   
 //================
@@ -26,19 +28,19 @@ const CartContainer = () => {
     total:getPriceInCart()
   }
   const orderId= await createOrder(order)
-  //alert/modal/popup/sweet
-  const orderComplite = await swal({
-    title:"gracias por su compra",
-    text:"tu compra se realizo correctamente. tu tiked de compra es:" + orderId,
-    icon:"success",
-    
-  });
-  
-//  clearCart()
  
-  //rendering condicional
+
   //redireccionar
+  const orderCompleta= await swal({
+ 
+    title:"Su Compra Se Registro Exitosamente",
+    text:"Nº de Ticket: "+ orderId,
+    icon:"success"
+  })
+    // navigate(`/checkout/${orderId}`)
+    cartClear()
 }
+
   // desglozar el carrito si tiene contenido
 
   return (
@@ -49,18 +51,19 @@ const CartContainer = () => {
       <table className="table">
         <thead>
           <tr>
-            <th className="cart-tr">imagen</th>
-            <th className="cart-tr">titulo</th>
-            <th className="cart-tr">cantidad</th>
-            <th className="cart-tr">precio</th>
-            <th className="cart-tr">subtotal</th>
+            <th className="cart-th">Imagen</th>
+            <th className="cart-th">Descripcion</th>
+            <th className="cart-th">Cantidad</th>
+            <th className="cart-th">Precio</th>
+            <th className="cart-th">Subtotal</th>
+            <th className="cart-th"></th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="tbody">
           {cart.map((item) => {
             return (
               
-                <tr key={item.id}>
+                <tr key={item.id} className="cart-trbody">
                   <td className="cart-td">
                     <img
                       className="cart__img"
@@ -82,19 +85,22 @@ const CartContainer = () => {
                  
                     <p>{item.precio * item.cant}</p>
                   </td>
+                  <td>
+                    <button onClick={(idItem)=>deleteItem(item.id)} className="cart-delate">X</button>
+                  </td>
                 </tr>
               
             );
           })}
         </tbody>
-
-        
+        <tfoot >
+        <tr>
+           <td className="cart-total"  colSpan="6"> <span>El tolal de su compra: ${getPriceInCart()}</span></td>
+        </tr>
+         
+        </tfoot>
       </table>
-      <>
-      <span>El tolal de su compra:{getPriceInCart()}</span>
-      <button className="compra-btn" onClick={handleCheckout}> terminar compra</button>
-      {/* <Button  onClick={handleCheckout}/> */}
-      </>
+      <button className="compra-btn" onClick={handleCheckout}>Terminar compra</button>
     </section>
   );
 };

@@ -8,46 +8,28 @@ import { cartContext } from "../context/cartContext";
 import { getSingleItem } from "../serives/dbfirebase";
 
 
-// ===== mock async services=========
-
-
-// function funcionDetalle(idURL){
-
-// const promesa= new Promise((resolve,reject)=>{
-//   setTimeout(()=>{
-//     const encontrado=Datos.find(item =>item.id === Number(idURL))
-//     resolve(encontrado)
-//   },500);
-
-//  })
-
-//  return promesa;
-// }
- //=================================
-// getSingleItem()
-
 const ItemDetailsContainer=()=>{
   // const [addedToCart, setAddedToCart] =useState(false)
       const [product, setproduct] =useState([])
-     
       let { id } = useParams();// Obtengo el paramtro de la url(es decir obtengo la url=la ruta con el use params)
-      // getSingleItem(id)
-      const {cart,addItem}=useContext(cartContext)
-     console.log("cart:",cart)
+
+      const {addItem}=useContext(cartContext)
       useEffect(()=>{
-  
         getSingleItem(id).then((response)=>{
-              console.log(response)
             setproduct(response)
        })
-
        }, [])
 
 //========================================
 function onAddToCart(cant){
-    // setAddedToCart(true)
-    addItem(product, cant)
-    console.log("agregado al carrito")
+    let mensaje=document.getElementById("mensaje")
+    if(cant !==0){
+        mensaje.classList.add("cart__messge-ocultar")
+        addItem(product, cant)
+    }else if(cant ===0){
+        mensaje.classList.remove("cart__messge-ocultar")
+    }
+    
 }
   return(
     <div className="contenedor-item">
@@ -62,12 +44,10 @@ function onAddToCart(cant){
           <span className='card__precio'>{`$`+ product.precio}</span>
           
         </div>
-
-         <ItemCount onAddToCart={onAddToCart} />
-       
-              
+         <ItemCount onAddToCart={onAddToCart} /> 
       </div>
     </article>
+    <small id="mensaje" className="cart__messge cart__messge-ocultar">Agrega una cantidad</small>
   
     </div>
 

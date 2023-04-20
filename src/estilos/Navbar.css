@@ -4,6 +4,10 @@
    height: auto;
    margin-top: 13px;
 }
+.link{
+  text-decoration: none;
+  color: black;
+}
 .nav-link{
   text-decoration: none;
   display: inline-block;

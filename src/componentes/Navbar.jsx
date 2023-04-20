@@ -45,7 +45,7 @@ function Navbar() {
             </Link>
           </li>
         </ul>
-        <Link to="/cart">
+        <Link to="/cart" className="link">
              <CardWidget 
              cart={getCountInCart()}
 

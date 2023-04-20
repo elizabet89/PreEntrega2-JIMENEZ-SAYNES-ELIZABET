@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import '../estilos/ItemCount.css'
 
 const ItemCount = ({onAddToCart}) => {
 
@@ -17,7 +18,9 @@ const ItemCount = ({onAddToCart}) => {
     setCant(cant + 1);
   };
 
+// const  onAddToCart({cant})=>{
 
+// }
 
   return (
     <div className="card__contenedor-btn">
@@ -28,7 +31,7 @@ const ItemCount = ({onAddToCart}) => {
       <button className="card__btn" onClick={incrementa}>
         +
       </button>
-      <button onClick={()=>onAddToCart(cant)}>agregar al carrito</button>
+      <button className="cart-agregar" onClick={()=>onAddToCart(cant)}>Agregar al carrito</button>
     </div>
   );
   

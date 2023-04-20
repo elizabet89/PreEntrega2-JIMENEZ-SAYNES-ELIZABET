@@ -1,0 +1,12 @@
+.cart-agregar{
+  border: none;
+  padding: 5px 15px;
+  margin-left: 10px;
+  color: white;
+  border-radius: 50px;
+  font-size: 12px;
+  background-color: rgb(151, 230, 77);
+}
+.cart-agregar:hover{
+  background-color: rgb(49, 188, 18);;
+}

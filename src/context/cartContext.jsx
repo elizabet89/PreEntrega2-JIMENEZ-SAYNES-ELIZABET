@@ -1,40 +1,39 @@
 import { createContext,useState } from "react";
-
-
 const cartContext= createContext();
 const Provider= cartContext.Provider;
 
-//inmutable
-//agregarAlcarrito()
 
-
-
-//custome provider
 function CartProvider(props){
 
   const [cart,setCart]=useState([]);
-
-
-  //cart--inmutable
   function addItem(product, cant){
-    // product.quantity=cant
-    // setCart(product)
+
     const newCart=[...cart]
-    //crud create read update delete
+    let valor=newCart.findIndex((item)=>item.id === product.id) //crud create read update delete
+
+    if(valor === -1){
     newCart.push({...product,cant})
-    //  setCart({...product,cant})
     setCart(newCart)
+  }else{
+    newCart[valor].cant=newCart[valor].cant+ cant;
+    setCart(newCart)
+  }
+  
   }
 
   function getCountInCart(){
-    let conta=0;
-    cart.forEach((item)=>{
+     let conta=0;
+    
+      cart.forEach((item)=>{
+              if(item.cant ===0){
+                return
+              }else{
+                conta+= item.cant
+              }
+      })
+      return conta;
+    }
    
-       conta+= item.cant
-       
-    })
-    return conta
-  }
  
   function getPriceInCart(){
     let total=0
@@ -46,10 +45,18 @@ function CartProvider(props){
     return total
   }
 
- 
+  function deleteItem(idTem){
+      setCart(cart.filter((item)=>item.id !== idTem) )
+  }
+  function cartClear() {
+   
+    setCart([]);
+
+  }
+
   return(
 
-    <Provider value={{ cart, addItem, getPriceInCart,getCountInCart}}>
+    <Provider value={{ cart, addItem, getPriceInCart,getCountInCart,cartClear,deleteItem}}>
      {props.children}
     </Provider>
   )
